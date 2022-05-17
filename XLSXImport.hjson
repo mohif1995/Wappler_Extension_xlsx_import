@@ -1,0 +1,29 @@
+[
+  {
+	 "type": "XLSXImport",
+    "module": "XLSXImport",
+    "action": "XLSXImport",
+    "groupTitle": "Data Management",
+    "groupIcon": "fas fa-lg fa-file comp-files",
+    "title": "XLSX Import @@var(name)@@",
+    "icon": "fad fa-lg fa-file-pdf comp-files",
+	"dataScheme": "getImportStepSchema",
+	"dataPick": true,
+	"dataPickObject": true,
+	"properties" : [
+			{
+				"group": "Import xlsx File Properties",
+			 	"variables": [
+					{ "name": "xlsxImportName", "optionName": "name", "title": "Name", "type": "text",
+						"required": true, "defaultValue": "","baseName": "xlsxImport"
+					},
+					{ "name": "xlsxImportPath", "optionName": "path", "title": "Path", "type": "file", "defaultValue": "", "serverDataBindings": true, "required": true },
+				
+        	{ "name": "xlsxImportOutput", "optionName": "output", "title": "Output", "type": "boolean", "defaultValue": false }
+				]
+			}
+		]
+	}
+]
+
+  
