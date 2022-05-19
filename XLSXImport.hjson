@@ -7,7 +7,7 @@
     "groupIcon": "fas fa-lg fa-file comp-files",
     "title": "XLSX Import @@var(name)@@",
     "icon": "fad fa-lg fa-file-pdf comp-files",
-	"dataScheme": "getImportStepSchema",
+	"dataScheme":[],
 	"dataPick": true,
 	"dataPickObject": true,
 	"properties" : [
@@ -15,15 +15,26 @@
 				"group": "Import xlsx File Properties",
 			 	"variables": [
 					{ "name": "xlsxImportName", "optionName": "name", "title": "Name", "type": "text",
-						"required": true, "defaultValue": "","baseName": "xlsxImport"
+						"required": true, "defaultValue": ""
 					},
 					{ "name": "xlsxImportPath", "optionName": "path", "title": "Path", "type": "file", "defaultValue": "", "serverDataBindings": true, "required": true },
+						{ "name": "xlsxImportFields", "optionName": "fields", "title": "Import Fields", "type": "grid", "serverDataBindings": true, "defaultValue": [],
+						"columns": [
+							{ "field": "field", "caption": "Field", "size": "100%", "editable": {"type": "text"} }
+						],
+						"singleField": true,
+						"newRecord": { "field": ""}
+					},
+          { "name": "xlsxImportHeader", "optionName": "header", "title": "Contains Header", "fullWidth": false, "columnHeaders": false,  "help": "Import file starts with Header line", "type": "boolean", "defaultValue": false },
 				
-        	{ "name": "xlsxImportOutput", "optionName": "output", "title": "Output", "type": "boolean", "defaultValue": false }
+        	{ "name": "xlsxImportOutput", "optionName": "output", "title": "Output", "type": "boolean", "defaultValue": false },
+			{ "name": "xlsxImportALLsheet", "optionName": "allsheet", "title": "Loop throw all sheets", "help": "If this option check import file will loop throw all sheet in worksheet ,else will import first sheet only " ,"type": "boolean", "defaultValue": false }
 				]
 			}
 		]
+		
 	}
 ]
+
 
   
